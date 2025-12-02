@@ -3,12 +3,10 @@ import fs from 'node:fs';
 
 /* eslint-disable no-unused-vars */
 type Solver = {
-  solve: (input: string[], part: number, enableLogs?: boolean) => string | number;
+  solve: (input: string[], part: number) => string | number;
   expected: (part: number) => string | number;
 };
 /* eslint-enable no-unused-vars */
-
-const ENABLE_LOGS = false;
 
 let startDay = 1;
 let endDay = 25;
@@ -61,7 +59,7 @@ for (let day = startDay; day <= endDay; day += 1) {
 
   for (const part of [1, 2]) {
     const expected = solver.expected(part);
-    const [answer, duration] = timed(() => solver.solve(text, part, ENABLE_LOGS));
+    const [answer, duration] = timed(() => solver.solve(text, part));
     printTestResult(day, part, expected, answer, duration);
   }
 }
