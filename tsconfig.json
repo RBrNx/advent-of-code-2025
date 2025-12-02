@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "strictPropertyInitialization": true,
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "allowJs": false,
+    "lib": ["ES2022"],
+    "module": "es2022",
+    "target": "ES2022",
+    "outDir": ".build",
+    "moduleResolution": "node",
+    "rootDir": "./"
+  },
+  "include": ["**/*"]
+}
