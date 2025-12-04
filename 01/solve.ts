@@ -1,3 +1,4 @@
+// Incrementally update the dial position and counts intermediate zeros
 const updatePosition = (currentPos: number, amount: number, direction: string) => {
   let newPos = currentPos;
   let intermediateZeroCount = 0;
@@ -35,6 +36,7 @@ const partOne = (input: string[], enableLogs?: boolean) => {
       continue;
     }
 
+    // Update the current dial position
     const { newPos } = updatePosition(currentDialPos, turnAmount, direction);
     currentDialPos = newPos;
 
@@ -44,6 +46,7 @@ const partOne = (input: string[], enableLogs?: boolean) => {
       );
     }
 
+    // For Part 1 we only care if the dial lands on zero after the full turn
     if (currentDialPos === 0) {
       zeroCount++;
     }
@@ -64,6 +67,7 @@ const partTwo = (input: string[], enableLogs?: boolean) => {
       continue;
     }
 
+    // Update the current dial position and count everytime the dial lands on zero
     const { newPos, intermediateZeroCount } = updatePosition(currentDialPos, turnAmount, direction);
     currentDialPos = newPos;
 
@@ -73,6 +77,7 @@ const partTwo = (input: string[], enableLogs?: boolean) => {
       );
     }
 
+    // This time we care about every time the dial lands on zero, during a turn or not
     zeroCount += intermediateZeroCount;
   }
 
