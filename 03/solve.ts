@@ -123,6 +123,6 @@ const partTwo = (input: string[]) => {
 
 const solve = (input: string[], part: number) => (part === 1 ? partOne(input) : partTwo(input));
 
-const expected = (part: number) => (part === 1 ? 17346 : 0);
+const expected = (part: number) => (part === 1 ? 17346 : 172981362045136);
 
 export { solve, expected };
