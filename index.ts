@@ -50,12 +50,7 @@ for (let day = startDay; day <= endDay; day += 1) {
   }
   const solver: Solver = await import(`${path}/solve.ts`);
 
-  const text = fs
-    .readFileSync(`${path}/input.txt`)
-    .toString()
-    .split('\n')
-    .map(s => s.replace(/\r$/, ''))
-    .filter(s => s.length > 0);
+  const text = fs.readFileSync(`${path}/input.txt`).toString().split('\n');
 
   for (const part of [1, 2]) {
     const expected = solver.expected(part);
